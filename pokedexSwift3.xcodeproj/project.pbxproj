@@ -373,6 +373,7 @@
 				ED8428CC1E42A87F0038AC4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
