@@ -23,6 +23,7 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var attackLbl: UILabel!
     @IBOutlet weak var currentEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
+    @IBOutlet weak var evoLbl: UILabel!
     
     
     override func viewDidLoad() {
@@ -49,6 +50,18 @@ class PokemonDetailVC: UIViewController {
         heightLbl.text = pokemon.height
         weightLbl.text = pokemon.weight
         typeLbl.text = pokemon.type
+        discriptionLbl.text = pokemon.description
+        
+        if pokemon.nextEvolutionId == "" {
+            evoLbl.text = "No Evolutions"
+            nextEvoImg.isHidden = true
+            
+        } else {
+            nextEvoImg.isHidden = false
+            nextEvoImg.image = UIImage(named: pokemon.nextEvolutionId)
+            let str = "Next Evolution: \(pokemon.nextEvolutionName) - LVL \(pokemon.nextEvolutionLevel)"
+            evoLbl.text = str
+        }
         
     }
     
